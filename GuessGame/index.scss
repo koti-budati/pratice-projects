@@ -1,9 +1,12 @@
 body {
   box-sizing: border-box;
   padding: 0;
-  margin: 0;
+  margin: 10px 25px;
   div {
     display: none;
+    span {
+      font-size: 1.25rem;
+    }
   }
   input {
     font-size: 1.25rem;
@@ -21,7 +24,7 @@ body {
     margin: 10px;
 
     &:hover {
-        background-color: #f6f6f6;
+      background-color: #f6f6f6;
     }
   }
 }
