@@ -11,12 +11,24 @@ var count;
 var userEntryList;
 
 start_game.addEventListener("click", () => {
+  // Random Number Generated
   randomNumber = Math.floor(Math.random() * 100 + 1);
+
+  // disabling start game button
   start_game.style.display = "none";
+  // enabling input and submit
   game_on.style.display = "inline";
+
+  // resetting count
   count = 0;
+
+  // user entry
   userEntryList = [];
+
+  // emptying comments
   comment.innerText = "";
+
+  // enabling submit button
   submit_number.disabled = false;
 });
 
