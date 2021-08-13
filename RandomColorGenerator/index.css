@@ -1,0 +1,35 @@
+body {
+  height: 100vh;
+  position: relative;
+}
+
+body #container {
+  position: absolute;
+  top: 40%;
+  left: 33%;
+}
+
+body #container * {
+  margin: 10px;
+}
+
+body #container h1 {
+  text-align: center;
+  font-size: 2rem;
+}
+
+body #container h1:focus {
+  outline: #fff;
+}
+
+#submit {
+  font-size: 1.25rem;
+  background-color: #555454;
+  border: 1px solid #4f5153;
+  border-radius: 30px;
+  cursor: pointer;
+  padding: 5px 15px;
+  color: white;
+  text-align: center;
+}
+/*# sourceMappingURL=index.css.map */
