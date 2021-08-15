@@ -1,0 +1,33 @@
+#form {
+  list-style-type: none;
+}
+
+#form br {
+  margin: 10px;
+}
+
+#form label {
+  width: 6rem;
+  display: inline-block;
+  font-size: 1rem;
+}
+
+#form button {
+  outline: 0;
+  border: 0;
+  font-size: 1.25rem;
+}
+
+#form button:hover {
+  background-color: #a9ada9;
+}
+
+#form input {
+  border: 1px solid black;
+  padding: 3px;
+}
+
+#form input:focus {
+  outline: none;
+}
+/*# sourceMappingURL=index.css.map */

@@ -1,0 +1,30 @@
+#form {
+  list-style-type: none;
+
+  br {
+    margin: 10px;
+  }
+
+  label {
+    width: 6rem;
+    display: inline-block;
+    font-size: 1rem;
+  }
+
+  button {
+    outline: 0;
+    border: 0;
+    font-size: 1.25rem;
+    &:hover {
+      background-color: rgb(169, 173, 169);
+    }
+  }
+
+  input {
+    border: 1px solid black;
+    padding: 3px;
+    &:focus {
+      outline: none;
+    }
+  }
+}
