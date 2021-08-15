@@ -23,8 +23,13 @@
   input {
     border: 1px solid black;
     padding: 3px;
+
+    display: inline-block;
     &:focus {
       outline: none;
     }
+  }
+  span {
+    display: inline-block;
   }
 }

@@ -25,9 +25,14 @@
 #form input {
   border: 1px solid black;
   padding: 3px;
+  display: inline-block;
 }
 
 #form input:focus {
   outline: none;
+}
+
+#form span {
+  display: inline-block;
 }
 /*# sourceMappingURL=index.css.map */
