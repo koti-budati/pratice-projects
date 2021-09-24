@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Switch</title>
+  </head>
+  <body>
+    <label for="weather">Select the weather type today</label>
+    <br />
+    <select id="weather">
+      <option value="">--make a choice--</option>
+      <option value="sunny">sunny</option>
+      <option value="rainy">rainy</option>
+      <option value="snowing">snowing</option>
+    </select>
+    <button onclick="weather()">Submit</button>
+    <p></p>
+    <script>
+      function weather() {
+        let p = document.querySelector("p");
+        switch (document.getElementById("weather").value) {
+          case "sunny":
+            p.innerText = "you have selected sunny";
+            break;
+          case "rainy":
+            p.innerText = "It's raining";
+            break;
+          case "snowing":
+            p.innerText = "It's Snowing";
+            break;
+          default:
+            p.innerHTML = "Enter a Valid weather";
+        }
+        p.style.color = "red";
+      }
+    </script>
+  </body>
+</html>

@@ -1,15 +1,18 @@
-// var xhr = new XMLHttpRequest();
+const data = () => {
+  var xhr = new XMLHttpRequest();
 
-// xhr.open("GET", "https://quotes.rest/qod", false);
+  xhr.open("get", "https://randomuser.me/api/", true);
 
-// xhr.onload = function () {
-//   if (this.status === 200) {
-//     console.log(this.response);
-//   }
-// };
-// xhr.send();
+  xhr.send();
 
-function clickMe() {
+  xhr.onload = function () {
+    const return_data = JSON.parse(xhr.responseText).results[0];
+    document.getElementById("profile-pic").src = return_data.picture["large"];
+  };
 
-  console.log(event)
-}
+  xhr.onerror = (e) => {
+    console.log(e);
+  };
+};
+
+data();
