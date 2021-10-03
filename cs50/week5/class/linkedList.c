@@ -10,6 +10,7 @@ typedef struct node{
     struct node *next;
 } node;
 
+void freeNode(node *list);
 int main(void){
     node *list = NULL;
     node *n = malloc(sizeof(node));
@@ -17,12 +18,12 @@ int main(void){
         printf("list is null\n");
         return 1;
     }
-    n->number = 1;
+    (*n).number = 1;
     n->next = NULL;
     list = n;
     n = malloc(sizeof(node));
     if(n==NULL){
-        free(list);
+        freeNode(list);
         printf("list is null\n");
         return 1;
     }
@@ -31,8 +32,7 @@ int main(void){
     list->next = n;
     n = malloc(sizeof(node));
     if(n==NULL){
-        free(list->next);
-        free(list);
+        freeNode(list);
         printf("list is null\n");
         return 1;
     }
@@ -42,11 +42,17 @@ int main(void){
     for(node *temp = list; temp != NULL; temp = temp->next){
         printf("number: %i\n", temp->number);
     }
-    while(list != NULL){
-        node *temp = list->next;
-        free(temp);
-        list = temp;
-    }
-    free(n);
+    freeNode(list);
     return 0;
+}
+
+void freeNode(node *list){
+    node *cursor = list;
+    node *temp = cursor;
+    while (cursor != NULL){
+        cursor = cursor->next;
+        free(temp);
+        temp = cursor;
+    }
+    return ;
 }
