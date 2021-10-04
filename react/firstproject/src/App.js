@@ -11,6 +11,7 @@ class App extends React.Component {
     return (
       <div>
         <Movies movies={this.moviesList} />
+        <h1>Hello</h1>
         <Parent />
       </div>
     );
