@@ -1,19 +1,17 @@
 import React from "react";
 
 class Child extends React.Component {
-  movies = [
-    {
-      movie: "Fault in our stars",
-      year: 2015,
-    },
-  ];
-  componentDidMount() {
-    this.props.updateMovies(this.movies);
-  }
   render() {
+    let k = 5;
     return (
       <div>
-        <h1>Hello from Child</h1>
+        <button
+          onClick={() => {
+            this.props.updateCounter(k);
+          }}
+        >
+          +{k}
+        </button>
       </div>
     );
   }

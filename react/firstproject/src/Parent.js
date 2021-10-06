@@ -1,33 +1,17 @@
 import React from "react";
-import Child from "./Child";
-import classes from "./Parent.module.css";
 
 class Parent extends React.Component {
   constructor() {
     super();
     this.state = {
-      movies: [],
+      counter: 0,
     };
   }
-  renderMovies = () => {
-    let list = this.state.movies.map((movie) => {
-      return <li>{movie.movie}</li>;
-    });
-    return list;
+  counterUpdate = (num = 1) => {
+    this.setState({ counter: this.state.counter + num });
   };
-
   render() {
-    return (
-      <div>
-        <h1 className={classes.h1}>Hello from Parent </h1>
-        <Child
-          updateMovies={(moviesList) => {
-            this.setState({ movies: moviesList });
-          }}
-        />
-        {this.renderMovies()}
-      </div>
-    );
+    return <div></div>;
   }
 }
 

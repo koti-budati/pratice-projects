@@ -1,14 +1,14 @@
-function render(tag, text, func) {
-  console.log(func);
-  if (func == undefined) {
-    const k = document.createElement(tag);
-    const content = document.createTextNode(text);
-    k.appendChild(content);
-    const body = document.getElementById("root");
-    document.body.insertBefore(k, body);
+function render(tag, text, func = null) {
+  const createTag = document.createElement(tag);
+  createTag.appendChild(document.createTextNode(text));
+  if (func === null) {
+    return createTag;
+  } else {
+    createTag.appendChild(func);
+    return createTag;
   }
 }
 
-render("h1", "hello");
-render("h1", "there");
-render("h1", "world");
+let root = document.getElementById("root");
+root.appendChild(render("p", "hello ", render("b", "there")));
+root.appendChild(render("input", "name"));

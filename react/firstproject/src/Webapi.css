@@ -1,0 +1,10 @@
+img {
+  width: 10rem;
+  border-radius: 5px;
+}
+
+#loading {
+  text-align: center;
+  color: #b3003b;
+  font-size: 10rem;
+}

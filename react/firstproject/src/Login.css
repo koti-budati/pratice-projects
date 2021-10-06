@@ -1,3 +1,22 @@
-.h1 {
-  color: #000000;
+input {
+  width: 20em;
+  height: 2.5rem;
+  padding: 0;
+  font-size: 15px;
+  margin: 1rem;
+  text-align: center;
+  outline: #ff0000;
+  border: 1px solid #ff0000;
+}
+
+input:focus {
+  outline: #000000;
+  border: 1px solid #000000;
+}
+
+form {
+  margin: 10rem;
+  width: 25em;
+  border: 1px solid #ff0000;
+  outline: #00ff00;
 }
