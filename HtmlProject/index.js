@@ -1,7 +1,7 @@
-function render(tag, text, func = null) {
+function render(tag, text, func) {
   const createTag = document.createElement(tag);
   createTag.appendChild(document.createTextNode(text));
-  if (func === null) {
+  if (func === undefined) {
     return createTag;
   } else {
     createTag.appendChild(func);
