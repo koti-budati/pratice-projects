@@ -1,0 +1,25 @@
+.productList {
+  display: grid;
+  grid-template-columns: 33% 33% 33%;
+  text-align: center;
+  margin: 20px auto;
+  align-items: center;
+}
+
+.price {
+  display: grid;
+  grid-template-columns: 35% 30%;
+  align-items: baseline;
+}
+
+.price div button {
+  margin: 0 10px;
+}
+
+.productList img {
+  height: 200px;
+}
+
+.add {
+  padding: 0 20px;
+}

@@ -26,6 +26,7 @@ class Login extends React.Component {
             name="username"
             autoComplete="off"
           />
+          <h1></h1>
           <span id="username-span"></span>
           <br />
           <input

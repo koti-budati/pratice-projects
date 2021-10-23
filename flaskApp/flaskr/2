@@ -1,0 +1,27 @@
+from flask import Flask
+from flask_cors import cross_origin
+import requests
+
+app = Flask(__name__)
+
+
+@app.route("/")
+@cross_origin()
+def index():
+    headers = {
+        "Authorization": "Bearer BQDsW8PYdV301A4BiBYeYIMXm0le-tkKCVSe54Ziz-GG
+        "mCwyZnf5KHkvNyH_5fFB9lKR2KxIg2zSM6HVw-Tt005-iMCTiA_o4RtJd03wORBlipZX
+        "VeMGN85hfyhOpj-n4VAZKfgnM7Vuaw2g44J904zHmmgIVa-TkXXA_DPS4b0",
+        "Content-Type": "application/json",
+        "Accept": "application/json"
+    }
+    r = requests.get(
+        'https://api.spotify.com/v1/browse/new-releases', headers=headers)
+    if r.ok:
+        return r.content
+    else:
+        return r.status_code
+
+
+if __name__ == "__main__":
+    app.run()

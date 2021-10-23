@@ -1,0 +1,10 @@
+#form {
+  margin: 10px;
+  display: grid;
+  grid-template-columns: 70% 30%;
+}
+
+#form input {
+  outline: none;
+  border-color: none;
+}

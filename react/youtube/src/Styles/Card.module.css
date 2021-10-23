@@ -1,0 +1,11 @@
+.card {
+  display: grid;
+  grid-template-columns: 30% 70%;
+}
+
+.card img {
+  height: 315px;
+}
+p {
+  font-size: 1rem;
+}

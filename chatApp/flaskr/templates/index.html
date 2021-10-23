@@ -1,0 +1,14 @@
+{% extends "layout.html" %} 
+{% block js %}
+    <script type="text/javascript" src="static/javascript/index.js"></script>
+{% endblock js %}
+{% block content %}
+<div id="root">
+  <div id="chatArea"></div>
+  <div id="inputs">
+    <input type="text" id="text" autofocus />
+
+    <input id="button" type="submit" value="Send" />
+  </div>
+</div>
+{% endblock content %}

@@ -1,0 +1,49 @@
+#root {
+  width: 70%;
+}
+#chatArea {
+  height: 90vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+  background-color: #f0f0f0;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+}
+
+#chatArea li {
+  overflow-wrap: break-word;
+  max-width: 80%;
+  margin: 10px;
+  list-style: none;
+  background-color: tan;
+  padding: 10px;
+}
+
+#received {
+  text-align: start;
+  left: 0%;
+  align-items: flex-start;
+  border-left: 5px solid #1c6ea4;
+  border-radius: 40px 40px 40px 0px;
+}
+
+#inputs {
+  height: 10px;
+}
+
+#text {
+  width: 85%;
+  position: inherit;
+}
+
+#button {
+  width: 13%;
+}
+
+#sent {
+  right: 0%;
+  align-self: flex-end;
+  border-right: 5px solid #1c6ea4;
+  border-radius: 40px 40px 0px 40px;
+}

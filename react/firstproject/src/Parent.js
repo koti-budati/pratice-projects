@@ -1,4 +1,5 @@
 import React from "react";
+import Child from "./Child";
 
 class Parent extends React.Component {
   constructor() {
@@ -11,7 +12,7 @@ class Parent extends React.Component {
     this.setState({ counter: this.state.counter + num });
   };
   render() {
-    return <div></div>;
+    return <Child updateCounter={this.counterUpdate}/>;
   }
 }
 
