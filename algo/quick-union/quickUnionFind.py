@@ -1,36 +1,34 @@
-def createTree(n: int):
-    elements = {}
-    for i in range(n):
-        elements[i] = {'root': i, 'weight': 1}
-    return elements
+class UnionFind:
+    def __init__(self, element: int) -> None:
+        self.elements = self.createTree(element)
 
+    def createTree(self, n: int):
+        elements = {}
+        for i in range(n):
+            elements[i] = {'root': i, 'weight': 1}
+        return elements
 
-ELEMENTS = createTree(1000)
+    def root(self, a: int) -> int:
+        while self.elements[a]['root'] != a:
+            a = self.elements[a]['root']
+        return a
 
+    def isConnected(self, a: int, b: int) -> bool:
+        a = self.root(a)
+        b = self.root(b)
+        return self.elements[a]['root'] == self.elements[b]['root']
 
-def root(a: int) -> int:
-    while ELEMENTS[a]['root'] != a:
-        a = ELEMENTS[a]['root']
-    return a
-
-
-def isConnected(a: int, b: int) -> bool:
-    a = root(a)
-    b = root(b)
-    return ELEMENTS[a]['root'] == ELEMENTS[b]['root']
-
-
-def union(a: int, b: int) -> None:
-    if ELEMENTS[a]['weight'] > ELEMENTS[b]['weight']:
-        ELEMENTS[b]['root'] = ELEMENTS[a]['root']
-        ELEMENTS[a]['weight'] += 1
-    else:
-        ELEMENTS[a]['root'] = ELEMENTS[b]['root']
-        ELEMENTS[b]['weight'] += 1
+    def union(self, a: int, b: int) -> None:
+        if self.elements[a]['weight'] > self.elements[b]['weight']:
+            self.elements[b]['root'] = self.elements[a]['root']
+            self.elements[a]['weight'] += 1
+        else:
+            self.elements[a]['root'] = self.elements[b]['root']
+            self.elements[b]['weight'] += 1
 
 
 def main():
-
+    quickUnionFind = UnionFind(1000)
     while True:
         userChoice = input(
             'Enter your Choice:\na) union\nb) Connected Check\ne) Exit\n: ')
@@ -38,14 +36,14 @@ def main():
             try:
                 a, b = (int(input('Enter first Element: ')),
                         int(input('Enter Second Element: ')))
-                union(a, b)
+                quickUnionFind.union(a, b)
             except ValueError:
                 print('Invalid input')
         elif(userChoice == 'b'):
             try:
                 a, b = (int(input('Enter first Element: ')),
                         int(input('Enter Second Element: ')))
-                print(isConnected(a, b))
+                print(quickUnionFind.isConnected(a, b))
 
             except ValueError:
                 print('Invalid input')
@@ -57,6 +55,7 @@ def main():
 
 if __name__ == "__main__":
     try:
+
         main()
     except KeyboardInterrupt:
         print('\nexiting....')
