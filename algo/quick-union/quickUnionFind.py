@@ -19,6 +19,8 @@ class UnionFind:
         return self.elements[a]['root'] == self.elements[b]['root']
 
     def union(self, a: int, b: int) -> None:
+        a = self.root(a)
+        b = self.root(b)
         if self.elements[a]['weight'] > self.elements[b]['weight']:
             self.elements[b]['root'] = self.elements[a]['root']
             self.elements[a]['weight'] += 1
@@ -38,7 +40,7 @@ def main():
                         int(input('Enter Second Element: ')))
                 quickUnionFind.union(a, b)
             except ValueError:
-                print('Invalid input')
+                print('Invalid input\n')
         elif(userChoice == 'b'):
             try:
                 a, b = (int(input('Enter first Element: ')),
@@ -46,7 +48,7 @@ def main():
                 print(quickUnionFind.isConnected(a, b))
 
             except ValueError:
-                print('Invalid input')
+                print('Invalid input\n')
         elif(userChoice == 'e'):
             exit(0)
         else:
